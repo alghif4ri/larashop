@@ -22,13 +22,16 @@ class Create extends Component
 
     public function store()
     {
+        $this->validate([
+            'title' => 'required|min:3',
+            'description' => 'required|max:180',
+            'price' => 'required|numeric',
+        ]);
 
         Product::create([
-
-                'title' => $this->title,
-                'description' => $this->description,
-                'price' => $this->price,
-
+            'title' => $this->title,
+            'description' => $this->description,
+            'price' => $this->price,
         ]);
 
         $this->emit('productStored');
