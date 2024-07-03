@@ -12,6 +12,7 @@ class Index extends Component
     public $paginate = 10;
     public $search;
     public $formVisible;
+    public $formUpdate = false;
 
     protected $updatesQuerytString = [
         ['search' => ['except' => '']],
@@ -45,6 +46,15 @@ class Index extends Component
     public function productStoredHandler()
     {
         $this->formVisible = false;
-        session()->flash('message','Product Stored');
+        session()->flash('message', 'Product Stored');
+    }
+
+    public function editProduct($productId)
+    {
+        $this->formUpdate = true;
+        $this->formVisible = true;
+
+        $product = Product::find($productId);
+        $this->emit('editProduct', $product);
     }
 }
