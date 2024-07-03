@@ -9,12 +9,19 @@
             <div class="card">
                 <div class="card-header">
                     Product
-                    @if(!$formVisible)
-                    <button wire:click="$toggle('formVisible')" class="btn btn-sm btn-primary">Create</button>
+                    @if (!$formVisible)
+                        <button wire:click="$toggle('formVisible')" class="btn btn-sm btn-primary">Create</button>
                     @endif
                 </div>
 
                 <div class="card-body">
+
+                    @if (session()->has('message'))
+                        <div class="alert alert-success">
+                            {{ session('message') }}
+                        </div>
+                    @endif
+
                     <div class="row mb-3">
                         <div class="col">
                             <select wire:model="paginate" name="" id=""

@@ -45,5 +45,6 @@ class Index extends Component
     public function productStoredHandler()
     {
         $this->formVisible = false;
+        session()->flash('message','Product Stored');
     }
 }
