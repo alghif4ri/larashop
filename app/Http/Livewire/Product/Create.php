@@ -5,7 +5,6 @@ namespace App\Http\Livewire\Product;
 use App\Product;
 use Livewire\Component;
 use Livewire\WithFileUploads;
-use Illuminate\Support\Str;
 
 class Create extends Component
 {
