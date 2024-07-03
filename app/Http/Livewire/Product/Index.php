@@ -11,9 +11,15 @@ class Index extends Component
     use WithPagination;
     public $paginate = 10;
     public $search;
+    public $formVisible;
 
     protected $updatesQuerytString = [
         ['search' => ['except' => '']],
+    ];
+
+    protected $listeners = [
+        'formClose' => 'formCloseHandler',
+        'productStored' => 'productStoredHandler'
     ];
 
     public function mount()
@@ -29,5 +35,15 @@ class Index extends Component
                 Product::latest()->where('title', 'like', '%' . $this->search . '%')
                 ->paginate($this->paginate)
         ]);
+    }
+
+    public function formCloseHandler()
+    {
+        $this->formVisible = false;
+    }
+
+    public function productStoredHandler()
+    {
+        $this->formVisible = false;
     }
 }

@@ -1,14 +1,24 @@
-
 <div class="container">
+
+    @if ($formVisible)
+        @livewire('product.create')
+    @endif
+
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Product') }}</div>
+                <div class="card-header">
+                    Product
+                    @if(!$formVisible)
+                    <button wire:click="$toggle('formVisible')" class="btn btn-sm btn-primary">Create</button>
+                    @endif
+                </div>
 
                 <div class="card-body">
                     <div class="row mb-3">
                         <div class="col">
-                            <select wire:model="paginate" name="" id="" class="form-control form-control-sm w-auto">
+                            <select wire:model="paginate" name="" id=""
+                                class="form-control form-control-sm w-auto">
                                 <option value="5">5</option>
                                 <option value="10">10</option>
                                 <option value="15">15</option>
@@ -16,7 +26,8 @@
                             </select>
                         </div>
                         <div class="col">
-                            <input wire:model="search" type="text" class="form-control form-control-sm" placeholder="Search">
+                            <input wire:model="search" type="text" class="form-control form-control-sm"
+                                placeholder="Search">
                         </div>
                     </div>
                     <hr>
