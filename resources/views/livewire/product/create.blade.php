@@ -16,7 +16,8 @@
                             </div>
 
                             <div class="col">
-                                <input wire:model="price" type="text" class="form-control @error('price') is-invalid @enderror" placeholder="Price">
+                                <input wire:model="price" type="text"
+                                    class="form-control @error('price') is-invalid @enderror" placeholder="Price">
                                 @error('price')
                                     <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
                                 @enderror
@@ -29,9 +30,10 @@
 
                         <div class="form-row">
                             <div class="col">
-                                <input wire:model="description" type="text" class="form-control @error('description') is-invalid @enderror"
+                                <input wire:model="description" type="text"
+                                    class="form-control @error('description') is-invalid @enderror"
                                     placeholder="Description">
-                                    @error('description')
+                                @error('description')
                                     <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
                                 @enderror
                             </div>
@@ -47,8 +49,12 @@
                                     <label for="">Image</label>
                                     <input wire:model="image" type="file" class="form-control-file" id="image">
                                     @error('image')
-                                    <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
-                                @enderror
+                                        <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                                    @enderror
+
+                                    @if ($image)
+                                        <img src="{{ $image->temporaryUrl() }}" alt="" height="200">
+                                    @endif
                                 </div>
                             </div>
                         </div>
