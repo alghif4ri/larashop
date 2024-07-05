@@ -39,8 +39,9 @@
                                             class="btn btn-primary float-right">Shop <i class="bi bi-bag-check"></i></a>
                                     </td>
                                 @else
-                                    <td colspan="3"><button class="btn btn-primary float-right">Checkout <i
-                                                class="bi bi-bag-check"></i></button></td>
+                                    <td colspan="3"><a href="{{ route('shop.checkout') }}"
+                                            class="btn btn-primary float-right">Checkout <i
+                                                class="bi bi-bag-check"></i></a></td>
                                 @endif
                             </tr>
                         </tfoot>

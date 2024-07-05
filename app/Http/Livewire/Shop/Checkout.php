@@ -7,7 +7,7 @@ use Livewire\Component;
 class Checkout extends Component
 {
 
-    public $firts_name;
+    public $first_name;
     public $last_name;
     public $email;
     public $phone;
@@ -29,7 +29,7 @@ class Checkout extends Component
     public function checkout()
     {
         $this->validate([
-            'firts_name' => 'required',
+            'first_name' => 'required',
             'last_name' => 'required',
             'email' => 'required|email',
             'phone' => 'required|numeric',
