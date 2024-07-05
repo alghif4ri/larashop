@@ -40,7 +40,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a href="{{ route('shop.index') }}" class="nav-link">Shop</a>
+                            <a href="{{ route('shop.index') }}" class="nav-link"><i class="bi bi-shop"></i></a>
                         </li>
                         @livewire('shop.cartnav')
                     </ul>
