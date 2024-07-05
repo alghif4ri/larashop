@@ -16,6 +16,7 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^2.0",
         "livewire/livewire": "^1.2",
+        "midtrans/midtrans-php": "^2.5",
         "twbs/bootstrap-icons": "^1.11"
     },
     "require-dev": {
